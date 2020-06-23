@@ -1,5 +1,5 @@
 # TurtleChallenge
-A turtle must walk through a minefield
+A turtle must walk through a minefield.
 The inputs are read from the txt files "moves.txt" and "game-settings.txt". 
 "moves.txt" is just a comma delimited list of 'r' and 'm'.
 "game-settings.txt" is JSON formatted and serialized to an object for the game.
