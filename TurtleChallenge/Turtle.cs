@@ -43,7 +43,7 @@ namespace Turtle_Challenge
 
         public void Rotate()
         {
-            if (DirectionId >= 3)
+            if (DirectionId > 3)
             {
                 DirectionId = 0;
                 return;
