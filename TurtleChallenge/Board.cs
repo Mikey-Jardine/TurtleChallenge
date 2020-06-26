@@ -15,21 +15,16 @@ namespace Turtle_Challenge
                 for (var j = 0; j <= Squares.GetUpperBound(1); j++)
                 {
                     Squares[i, j] = new Square();
+                    if (mines.Contains(new Point() { X = i, Y = j }))
+                    {
+                        Squares[i, j].HasMine = true;
+                    }
                 }
             }
-
             Squares[exit.X, exit.Y].HasExit = true;
-
-            foreach (var mine in mines)
-            {
-                Squares[mine.X, mine.Y].HasMine = true;
-            }
-
-            Exit = exit;
         }
 
         public Square[,] Squares { get; set; }
-        public Point Exit { get; set; }
 
         public void Update(Turtle turtle)
         {

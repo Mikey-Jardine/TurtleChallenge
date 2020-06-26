@@ -28,11 +28,8 @@ namespace Turtle_Challenge
             foreach (var move in Moves)
             {
                 if (Board.Squares[Turtle.CurrentSquare.X, Turtle.CurrentSquare.Y].HasExit)
-                {
-                    Turtle.Alive = true;
                     break;
-                }
-
+                
                 if (Board.Squares[Turtle.CurrentSquare.X, Turtle.CurrentSquare.Y].HasMine)
                 {
                     Turtle.Alive = false;
@@ -44,16 +41,12 @@ namespace Turtle_Challenge
                     Turtle.Rotate();
                 }
 
-                if (move == _move)
+                if (move == _move && IsOnBoard())
                 {
-                    if (IsOnBoard())
-                    {
-                        Turtle.Move();
-                    }
+                    Turtle.Move();
                 }
 
                 Board.Update(Turtle);
-
             }
 
             Success = Turtle.Alive;
